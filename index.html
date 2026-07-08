@@ -4,8 +4,6 @@
   <title>DARMOWE ROBUXY!</title>
   <meta charset='UTF-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="media/images/cat.jpg">
 
   <meta property="og:title" content="Darmowe Robuxy" />
   <meta property="og:type" content="website" />
@@ -15,42 +13,247 @@
   <meta name="keywords" content="robux, free robux, darmowe robuxy, roblox, generator robux">
   <meta name="description" content="FREE ROBUX GENERATOR - Kliknij i odbierz darmowe Robuxy!">
   <meta name="theme-color" content="#ffb6c8">
+
+  <style>
+    /* Style CSS stylizujące stronę na wzór zabawnych stron-trolli */
+    body {
+      background-color: #ffb6c8; /* Różowe tło z Twojego meta-koloru */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #333;
+    }
+
+    .hello-message {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 450px;
+      width: 90%;
+    }
+
+    .hello-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #ff4757;
+      text-shadow: 2px 2px 0px #fff, 4px 4px 0px #333;
+    }
+
+    .hello-sub {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      line-height: 1.4;
+    }
+
+    .hello-sub span {
+      display: block;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .cat-wrapper {
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #ff4757;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      background-color: #ddd; /* Tło zastępcze jeśli nie ma obrazka */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cat-wrapper:hover {
+      transform: scale(1.05);
+    }
+
+    .robux-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cat-button {
+      background-color: #2ed573;
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 0px #26af5f;
+      transition: all 0.1s ease;
+      outline: none;
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    .cat-button:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0px #26af5f;
+    }
+
+    .cat-button:disabled {
+      background-color: #ccc;
+      box-shadow: 0 5px 0px #999;
+      cursor: not-allowed;
+    }
+
+    .logout-messages {
+      margin-top: 25px;
+      min-height: 50px;
+      text-align: left;
+      background: #f1f2f6;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      border-left: 5px solid #ff4757;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .noscript-banner {
+      background-color: #ff4757;
+      color: white;
+      padding: 20px;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
 
 <noscript>
   <div class="noscript-banner">
     Po cos ty JavaScript wylaczyl, bamboszu?<br>
-    <span class="noscript-sub">Wlacz JS, zeby odebrac darmowe Robuxy!</span>
+    <span style="font-size: 0.8rem;">Wlacz JS, zeby odebrac darmowe Robuxy!</span>
   </div>
 </noscript>
 
-<div id="app-content">
-  <div class="hello-message">
-    <div class="hello-title chrome-text">FREE ROBUX!</div>
-    <div class="hello-sub">
-      Najlepszy darmowy generator w sieci<br>
-      <span>kliknij w obrazek, przycisk, albo walnij 3 razy w spacje</span>
-    </div>
-
-    <div class="cat-wrapper" id="catWrapper">
-      <img
-        src="media/images/cat.jpg"
-        alt="Robux Generator"
-        class="robux-image"
-        id="robuxImage"
-        draggable="false"
-      />
-    </div>
-
-    <button class="cat-button" id="catButton">
-      Odbierz Robux
-    </button>
+<div class="hello-message">
+  <div class="hello-title">FREE ROBUX!</div>
+  <div class="hello-sub">
+    Najlepszy darmowy generator w sieci<br>
+    <span>kliknij w obrazek, przycisk, albo walnij 3 razy w spacje</span>
   </div>
 
-  <div class="logout-messages"></div>
+  <div class="cat-wrapper" id="catWrapper">
+    <img
+      src="https://placecat.com/300/300"
+      alt="Robux Generator"
+      class="robux-image"
+      id="robuxImage"
+      draggable="false"
+    />
+  </div>
+
+  <button class="cat-button" id="catButton">
+    Odbierz Robux
+  </button>
+
+  <div class="logout-messages" id="logoutMessages">Oczekiwanie na kliknięcie...</div>
 </div>
 
-<script src="index.js"></script>
+<script>
+  // Logika JavaScript odpowiedzialna za interakcję na stronie
+  const catButton = document.getElementById('catButton');
+  const robuxImage = document.getElementById('robuxImage');
+  const logoutMessages = document.getElementById('logoutMessages');
+  const catWrapper = document.getElementById('catWrapper');
+
+  let spaceCount = 0;
+  let isRunning = false;
+
+  function uruchomGenerator() {
+      if (isRunning) return; // Zapobiega ponownemu uruchomieniu w trakcie trwania animacji
+      
+      isRunning = true;
+      catButton.disabled = true;
+      logoutMessages.innerHTML = ''; 
+
+      // Lista zabawnych komunikatów na wzór generatorów-trolli
+      const komunikaty = [
+          "🤖 Inicjalizacja super-tajnego protokołu...",
+          "🐱 Kot patrzy na Ciebie z podejrzeniem...",
+          "🛰️ Łączenie z satelitami Pentagonu i Roblox Corp...",
+          "⚡ Przekierowywanie darmowej mocy obliczeniowej...",
+          "🔑 Generowanie kluczy dostępu do bazy danych...",
+          "🔥 Pobieranie bazy danych użytkowników...",
+          "🛑 UWAGA! Wykryto potężnego bambosza przed ekranem!",
+          "💸 Żartowałem. Żadnych darmowych Robuxów nie ma! Weź się za naukę albo idź na dwór! 😉"
+      ];
+
+      let i = 0;
+      const interval = setInterval(() => {
+          if (i < komunikaty.length) {
+              const p = document.createElement('div');
+              p.textContent = komunikaty[i];
+              p.style.marginBottom = "8px";
+              
+              // Wyróżnienie ostatniego, demaskującego komunikatu
+              if (i === komunikaty.length - 1) {
+                  p.style.color = "#ff4757";
+                  p.style.fontWeight = "bold";
+                  p.style.fontSize = "1.05rem";
+              }
+              
+              logoutMessages.appendChild(p);
+              // Automatyczne przewijanie konsoli na dół
+              logoutMessages.scrollTop = logoutMessages.scrollHeight;
+              i++;
+          } else {
+              clearInterval(interval);
+              catButton.disabled = false;
+              isRunning = false;
+          }
+      }, 1000); // Każda kolejna linijka pojawia się po 1 sekundzie
+  }
+
+  // 1. Kliknięcie zielonego przycisku
+  catButton.addEventListener('click', uruchomGenerator);
+
+  // 2. Kliknięcie w kółko z obrazkiem
+  catWrapper.addEventListener('click', () => {
+      // Mały efekt "kliknięcia" (zmniejszenie na moment)
+      catWrapper.style.transform = "scale(0.95)";
+      setTimeout(() => {
+          catWrapper.style.transform = "";
+      }, 100);
+      
+      uruchomGenerator();
+  });
+
+  // 3. Reakcja na 3-krotne wciśnięcie spacji
+  window.addEventListener('keydown', (event) => {
+      if (event.code === 'Space') {
+          event.preventDefault(); // Blokuje domyślne przewijanie strony w dół spacją
+          
+          spaceCount++;
+          if (spaceCount === 3) {
+              spaceCount = 0; // Reset licznika spacji
+              uruchomGenerator();
+          }
+      }
+  });
+</script>
+
 </body>
 </html>
